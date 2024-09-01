@@ -1,5 +1,7 @@
 import React from "react";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Link from 'next/link';
+
 
 const Page: React.FC = () => {
   return (
@@ -11,27 +13,40 @@ const Page: React.FC = () => {
       <div style={styles.container}>
         <header style={styles.header}>
           <h1>My Wardrobe</h1>
+          <link rel="icon" href="/images/closet.png" type="image/png" />
+
         </header>
+
+        <nav style={styles.sidebar}>
+          <h2>Menu</h2>
+          <ul>
+          <li><Link href="#">Home</Link></li>
+          <li><Link href="#">Inventory</Link></li>
+            <li><a href="#">Outfit History</a></li>
+            <li><a href="#">Settings</a></li>
+          </ul>
+        </nav>
+
         <main style={styles.main}>
           <p style={styles.introText}>
             Simplify Your Style with Our Personal Wardrobe Assistant. <br></br>
             Discover fresh outfit combinations with ease! Our AI recommends ideal attire
             based on your current wardrobe and beyond.
-            <ol>
+          </p>
+          <ol>
               <li>Upload images of your clothing items.</li>
               <li>
                 Assign categories to each piece for streamlined organization.
               </li>
-              <li>Click 'Upload Image' to add as many items as you wish.</li>
+              <li>Click Upload Image to add as many items as you wish.</li>
               <li>
                 Once your wardrobe is uploaded, select the options that best
                 suit your needs to start your day feeling refreshed.
               </li>
               <li>
-                Click 'Generate Attire' and get your ideal outfit in seconds!
+                Click Generate Attire and get your ideal outfit in seconds!
               </li>
             </ol>
-          </p>
 
           <form id="uploadForm" style={styles.form}>
             <input
@@ -75,11 +90,25 @@ const styles = {
     textAlign: "center" as const,
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
   },
-  main: {
-    flex: 1,
-    padding: "20px",
-    maxWidth: "800px",
-    margin: "auto",
+  sidebar: {
+    width: "20%",
+    backgroundColor: "#fff",
+    padding: "1rem",
+    boxShadow: "0 0 5px rgba(0,0,0,0.1)",
+  },
+  content: {
+    width: "80%",
+    padding: "1rem",
+  },
+  card: {
+    backgroundColor: "#fff",
+    padding: "1rem",
+    marginBottom: "1rem",
+    boxShadow: "0 0 5px rgba(0,0,0,0.1)",
+  },
+  cardTitle: {
+    fontSize: "1.2rem",
+    margin: "0.5rem 0",
   },
   introText: {
     fontSize: "1.2em",
