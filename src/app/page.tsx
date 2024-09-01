@@ -10,24 +10,49 @@ const Page: React.FC = () => {
       {/* Main page content */}
       <div style={styles.container}>
         <header style={styles.header}>
-          <h1>Welcome to My Page</h1>
+          <h1>My Wardrobe</h1>
         </header>
         <main style={styles.main}>
-          <p style={styles.introText}>This is a basic TypeScript React component.</p>
+          <p style={styles.introText}>
+            Simplify Your Style with Our Personal Wardrobe Assistant. <br></br>
+            Discover fresh outfit combinations with ease! Our AI recommends ideal attire
+            based on your current wardrobe and beyond.
+            <ol>
+              <li>Upload images of your clothing items.</li>
+              <li>
+                Assign categories to each piece for streamlined organization.
+              </li>
+              <li>Click 'Upload Image' to add as many items as you wish.</li>
+              <li>
+                Once your wardrobe is uploaded, select the options that best
+                suit your needs to start your day feeling refreshed.
+              </li>
+              <li>
+                Click 'Generate Attire' and get your ideal outfit in seconds!
+              </li>
+            </ol>
+          </p>
 
           <form id="uploadForm" style={styles.form}>
-            <input type="file" id="imageInput" accept="image/*" style={styles.input} />
+            <input
+              type="file"
+              id="imageInput"
+              accept="image/*"
+              style={styles.input}
+            />
             <select id="categorySelect" style={styles.select}>
               <option value="Shirt">Shirt</option>
               <option value="Pants">Pants</option>
               <option value="Jacket">Jacket</option>
               <option value="Accessory">Accessory</option>
             </select>
-            <button type="submit" style={styles.button}>Upload Image</button>
+            <button type="submit" style={styles.button}>
+              Upload Image
+            </button>
           </form>
         </main>
         <footer style={styles.footer}>
-          <p>© 2024 Wardrobe AI</p>
+          <p>© 2024 Wardrobe Assistant</p>
         </footer>
       </div>
     </>
