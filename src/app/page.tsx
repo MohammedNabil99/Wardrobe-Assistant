@@ -46,6 +46,9 @@ const Page: React.FC = () => {
             <Link href="#">Outfit History</Link>
           </li>
           <li>
+            <Link href="/membership-plans">Membership Plans</Link>
+          </li>
+          <li>
             <Link href="#">Settings</Link>
           </li>
         </ul>
