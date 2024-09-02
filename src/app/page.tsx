@@ -1,95 +1,37 @@
-"use client";
-import React, { useState } from "react";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import Link from "next/link";
-import Head from "next/head"; // Import the Head component from Next.js
+import Box from "../components/box";
 
-const Page: React.FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
+export default function Page() {
   return (
     <>
-      {/* Place head elements inside the Head component */}
-      <Head>
-        <title>My Wardrobe</title>
-        <link rel="icon" href="/images/closet.png" type="image/png" />
-      </Head>
-
-      <GoogleAnalytics gaId="G-TF2BGJFVSP" />
-
-      {/* Header should be consistently rendered */}
-      <header className="header">
-        <h1>My Wardrobe</h1>
-        <button className="menu-button" onClick={toggleSidebar}>
-          ☰
-        </button>
-      </header>
-
-      {/* Sidebar navigation */}
-      <nav className={`sidebar ${sidebarOpen ? "open" : ""}`}>
-        <button className="close-button" onClick={toggleSidebar}>
-          x
-        </button>
-        <h2>Menu</h2>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/inventory">Inventory</Link>
-          </li>
-          <li>
-            <Link href="#">Outfit History</Link>
-          </li>
-          <li>
-            <Link href="/membership-plans">Membership Plans</Link>
-          </li>
-          <li>
-            <Link href="#">Settings</Link>
-          </li>
-        </ul>
-      </nav>
-
-      {/* Main content */}
-      <main className="main">
-        <p className="intro-text">
-          Simplify Your Style with Our Personal Wardrobe Assistant. <br />
-          Discover fresh outfit combinations with ease! Our AI recommends ideal
-          attire based on your current wardrobe and beyond.
+      <div className="h-screen flex flex-col justify-around items-center">
+        <h1 className="text-4xl font-bold">
+          St<span className="text-orange-500">ai</span>le Seeker
+        </h1>
+        <p className="text-lg text-center max-w-xl">
+          Level up your drip, aura points, and unspoken rizz by leveraging the
+          power of AI to help you reduce burnout in deciding what you want to
+          wear and understand the current fashion trends.
         </p>
-        <ol>
-          <li>Upload images of your clothing items.</li>
-          <li>Assign categories to each piece for streamlined organization.</li>
-          <li>Click Upload Image to add as many items as you wish.</li>
-          <li>
-            Once your wardrobe is uploaded, select the options that best suit
-            your needs to start your day feeling refreshed.
-          </li>
-          <li>Click Generate Attire and get your ideal outfit in seconds!</li>
-        </ol>
-
-        <form id="uploadForm" className="form">
-          <input type="file" id="imageInput" accept="image/*" />
-          <select id="categorySelect">
-            <option value="Shirt">Shirt</option>
-            <option value="Pants">Pants</option>
-            <option value="Jacket">Jacket</option>
-            <option value="Accessory">Accessory</option>
-          </select>
-          <button type="submit">Upload Image</button>
-        </form>
-      </main>
-
-      {/* Footer content */}
-      <footer className="footer">
-        <p>© 2024 Wardrobe Assistant</p>
-      </footer>
+      </div>
+      <div className="flex flex-col items-center">
+        <div className="grid grid-cols-3 gap-12">
+          <Box
+            img="/wardrobe.png"
+            title="Use our virtual wardrobe"
+            description="Upload images of your clothing and organize them into virtual wardrobes for easy outfit planning."
+          />
+          <Box
+            img="/attire.png"
+            title="Generate the attire you want"
+            description="Generate combinations of outfits based on your personal style, budget, weather, occasion, or your virtual wardrobe and save them for later."
+          />
+          <Box
+            img="/people.png"
+            title="Get recommendations"
+            description="Receive personalized recommendations related to your style, the latest trends, or your wardrobe and find out where to buy them."
+          />
+        </div>
+      </div>
     </>
   );
-};
-
-export default Page;
+}

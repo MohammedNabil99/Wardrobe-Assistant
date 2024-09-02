@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>{children}</body>
+        <body className="bg-gradient-to-br from-gray-950 to-gray-800 pb-20">
+          {children}
+        </body>
         <GoogleAnalytics gaId="G-XYZ" />
       </html>
     </ClerkProvider>
