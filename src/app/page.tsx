@@ -1,8 +1,8 @@
-'use client';
-import React, { useState } from 'react';
-import { GoogleAnalytics } from '@next/third-parties/google';
-import Link from 'next/link';
-import Head from 'next/head'; // Import the Head component from Next.js
+"use client";
+import React, { useState } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import Link from "next/link";
+import Head from "next/head"; // Import the Head component from Next.js
 
 const Page: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -30,7 +30,10 @@ const Page: React.FC = () => {
       </header>
 
       {/* Sidebar navigation */}
-      <nav className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+      <nav className={`sidebar ${sidebarOpen ? "open" : ""}`}>
+        <button className="close-button" onClick={toggleSidebar}>
+          x
+        </button>
         <h2>Menu</h2>
         <ul>
           <li>
@@ -52,16 +55,16 @@ const Page: React.FC = () => {
       <main className="main">
         <p className="intro-text">
           Simplify Your Style with Our Personal Wardrobe Assistant. <br />
-          Discover fresh outfit combinations with ease! Our AI recommends ideal attire
-          based on your current wardrobe and beyond.
+          Discover fresh outfit combinations with ease! Our AI recommends ideal
+          attire based on your current wardrobe and beyond.
         </p>
         <ol>
           <li>Upload images of your clothing items.</li>
           <li>Assign categories to each piece for streamlined organization.</li>
           <li>Click Upload Image to add as many items as you wish.</li>
           <li>
-            Once your wardrobe is uploaded, select the options that best suit your needs
-            to start your day feeling refreshed.
+            Once your wardrobe is uploaded, select the options that best suit
+            your needs to start your day feeling refreshed.
           </li>
           <li>Click Generate Attire and get your ideal outfit in seconds!</li>
         </ol>
