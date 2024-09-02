@@ -3,15 +3,22 @@ import Box from "../components/box";
 export default function Page() {
   return (
     <>
-      <div className="h-screen flex flex-col justify-around items-center">
+      <div className="h-screen flex flex-col justify-center items-center gap-20">
         <h1 className="text-4xl font-bold">
           St<span className="text-orange-500">ai</span>le Seeker
         </h1>
-        <p className="text-lg text-center max-w-xl">
-          Level up your drip, aura points, and unspoken rizz by leveraging the
-          power of AI to help you reduce burnout in deciding what you want to
-          wear and understand the current fashion trends.
-        </p>
+        <div className="flex flex-col items-center gap-4">
+          <h2 className="text-2xl font-semibold">
+            Your awesome AI-powered fashion assistant
+          </h2>
+          <p className="text-center max-w-sm">
+            Have you experienced decision fatigue when choosing or don&apos;t
+            have any ideas on what to wear?
+          </p>
+          <p className="text-center max-w-sm">
+            Eliminate these possibilities with our product!
+          </p>
+        </div>
       </div>
       <div className="flex flex-col items-center">
         <div className="grid grid-cols-3 gap-12">
