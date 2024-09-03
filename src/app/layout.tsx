@@ -1,6 +1,7 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css"; // Relative path to the global CSS file
 import { ClerkProvider } from "@clerk/nextjs";
+import { neobrutalism } from "@clerk/themes";
 
 export const metadata = {
   title: "Style Seeker",
@@ -15,10 +16,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: [neobrutalism],
+      }}>
       <html lang="en">
-        <body className="bg-gradient-to-br from-gray-950 to-gray-800 pb-20 text-white">
-          {children}
+        <body>
+          <div className="bg-gradient-to-br from-gray-950 to-gray-800 text-white">
+            {children}
+          </div>
         </body>
         <GoogleAnalytics gaId="G-XYZ" />
       </html>
