@@ -17,6 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider
+      afterSignOutUrl={"/"}
       appearance={{
         baseTheme: [neobrutalism],
       }}>
