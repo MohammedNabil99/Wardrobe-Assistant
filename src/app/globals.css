@@ -139,12 +139,7 @@
   margin-top: auto;
 }
 
-#pricing-table-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
+.stripe-table-color {
   background-color: #0a1a2e;
 }
 
@@ -153,6 +148,11 @@ stripe-pricing-table {
   height: 100%;
 }
 
-#pricing-table-container {
-  position: relative;
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none; /* Firefox */
 }

@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { UserButton, useUser } from "@clerk/nextjs";
 
@@ -6,7 +7,7 @@ export default function Navbar() {
   const { isSignedIn } = useUser();
 
   return (
-    <nav className="flex justify-between items-center p-8 text-white h-14 fixed w-full backdrop-blur-md border-b border-gray-700">
+    <nav className="flex justify-between items-center p-8 text-white h-14 fixed w-full backdrop-blur-md border-b border-gray-700 z-50">
       <Link href="/">
         <h1 className="text-2xl font-bold">SS</h1>
       </Link>
@@ -14,15 +15,15 @@ export default function Navbar() {
         {isSignedIn ? (
           <>
             <Link href="/inventory">
-              <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-yellow-200 via-green-200 to-green-300 text-black font-bold hover:scale-110 duration-200">
+              <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 text-black font-bold hover:scale-110 duration-200">
                 Inventory
               </button>
             </Link>
-            <Link href="/membership-plans">
+            <a href="/membership-plans">
               <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-yellow-200 via-green-200 to-green-300 text-black font-bold hover:scale-110 duration-200">
                 View plans
               </button>
-            </Link>
+            </a>
             <UserButton />
           </>
         ) : (
@@ -37,11 +38,11 @@ export default function Navbar() {
                 Sign up
               </button>
             </Link>
-            <Link href="/membership-plans">
+            <a href="/membership-plans">
               <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-yellow-200 via-green-200 to-green-300 text-black font-bold hover:scale-110 duration-200">
                 View plans
               </button>
-            </Link>
+            </a>
           </>
         )}
       </div>

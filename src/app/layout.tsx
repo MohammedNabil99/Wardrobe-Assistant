@@ -2,6 +2,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css"; // Relative path to the global CSS file
 import { ClerkProvider } from "@clerk/nextjs";
 import { neobrutalism } from "@clerk/themes";
+import Navbar from "@/components/navbar";
 
 export const metadata = {
   title: "Style Seeker",
@@ -23,7 +24,8 @@ export default function RootLayout({
       }}>
       <html lang="en">
         <body>
-          <div className="bg-gradient-to-br from-gray-950 to-gray-800 text-white">
+          <Navbar />
+          <div className="bg-gradient-to-br from-gray-950 to-gray-800 text-white h-screen overflow-scroll">
             {children}
           </div>
         </body>

@@ -1,10 +1,8 @@
 import Box from "../components/box";
-import Navbar from "@/components/navbar";
 
 export default function Page() {
   return (
     <>
-      <Navbar />
       <div className="px-8 pb-20">
         <div className="h-screen flex flex-col justify-center items-center gap-20 text-center">
           <h1 className="text-4xl font-bold">
