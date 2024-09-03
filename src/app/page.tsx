@@ -19,7 +19,7 @@ export default function Page() {
               have any ideas on what to wear?
             </p>
             <p className="max-w-sm">
-              Eliminate these possibilities with our product!
+              Eliminate these frustrations with our product!
             </p>
           </div>
         </div>
