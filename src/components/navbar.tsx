@@ -19,6 +19,11 @@ export default function Navbar() {
                 Inventory
               </button>
             </Link>
+            <a href="/upload">
+              <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-red-200 via-red-300 to-yellow-200 text-black font-bold hover:scale-110 duration-200">
+                Upload
+              </button>
+            </a>
             <a href="/membership-plans">
               <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-yellow-200 via-green-200 to-green-300 text-black font-bold hover:scale-110 duration-200">
                 View plans
