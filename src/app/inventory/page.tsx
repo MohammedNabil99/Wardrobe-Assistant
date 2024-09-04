@@ -75,14 +75,16 @@ const InventoryPage: FC = () => {
       <h1 className="text-2xl font-bold mb-6">Wardrobe Inventory</h1>
       <Link
         href="/"
-        className="inline-block mb-8 px-2 py-1 rounded-lg bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100 text-black font-bold hover:scale-110 duration-200">
+        className="inline-block mb-8 px-2 py-1 rounded-lg bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100 text-black font-bold hover:scale-110 duration-200"
+      >
         Back to Home
       </Link>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {items.map((item) => (
           <div
             key={item.id}
-            className="border rounded-lg shadow-md overflow-hidden relative">
+            className="border rounded-lg shadow-md overflow-hidden relative"
+          >
             <div className="w-full h-48 relative">
               <Image
                 src={item.image}

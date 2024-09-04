@@ -104,16 +104,6 @@
   flex: 1;
 }
 
-.footer {
-  position: fixed; /* or absolute */
-  padding: 10px;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-
-  color: white;
-}
-
 .stripe-table-color {
   background-color: #0a1a2e;
 }
