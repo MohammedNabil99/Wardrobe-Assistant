@@ -4,6 +4,15 @@ import { createClient } from "@/supabase/server";
 
 export async function POST(request: NextRequest) {
 
+  const user = await currentUser();
+
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  const user_id = user.id;
+  //console.log(user.id);
+
   const supabase = createClient();
 
   const formData = await request.formData();
@@ -16,7 +25,7 @@ export async function POST(request: NextRequest) {
   }
 
   // Define the file path in the bucket
-  const filePath = `uploads/${imageName}`;
+  const filePath = `uploads/${user_id}/${imageName}`;
 
   const { data, error } = await supabase.storage.from('images').upload(filePath, file)
   if (error) {

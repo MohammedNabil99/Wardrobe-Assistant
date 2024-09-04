@@ -4,12 +4,15 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Link from "next/link";
 import Head from "next/head"; // Import the Head component from Next.js
 
+
 const Page: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
+
 
   return (
     <>
@@ -19,7 +22,9 @@ const Page: React.FC = () => {
         <link rel="icon" href="/images/closet.png" type="image/png" />
       </Head>
 
+
       <GoogleAnalytics gaId="G-TF2BGJFVSP" />
+
 
       {/* Header should be consistently rendered */}
       <header className="header">
@@ -28,6 +33,7 @@ const Page: React.FC = () => {
           ☰
         </button>
       </header>
+
 
       {/* Sidebar navigation */}
       <nav className={`sidebar ${sidebarOpen ? "open" : ""}`}>
@@ -51,6 +57,7 @@ const Page: React.FC = () => {
         </ul>
       </nav>
 
+
       {/* Main content */}
       <main className="main">
         <p className="intro-text">
@@ -69,6 +76,7 @@ const Page: React.FC = () => {
           <li>Click Generate Attire and get your ideal outfit in seconds!</li>
         </ol>
 
+
         <form id="uploadForm" className="form">
           <input type="file" id="imageInput" accept="image/*" />
           <select id="categorySelect">
@@ -81,6 +89,7 @@ const Page: React.FC = () => {
         </form>
       </main>
 
+
       {/* Footer content */}
       <footer className="footer">
         <p>© 2024 Wardrobe Assistant</p>
@@ -89,4 +98,9 @@ const Page: React.FC = () => {
   );
 };
 
+
 export default Page;
+
+
+
+
