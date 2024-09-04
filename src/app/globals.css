@@ -92,8 +92,6 @@
 .main {
   flex: 1;
   padding: 2rem;
-  margin-left: 250px;
-  transition: margin-left 0.3s ease;
 }
 
 .intro-text {
@@ -132,11 +130,13 @@
 }
 
 .footer {
-  padding: 20px;
+  position: fixed; /* or absolute */
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
   text-align: center;
-  background-color: #3a3f50;
+
   color: white;
-  margin-top: auto;
 }
 
 .stripe-table-color {

@@ -4,68 +4,26 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import Link from "next/link";
 import Head from "next/head"; // Import the Head component from Next.js
 
-
 const Page: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-
   return (
     <>
-      {/* Place head elements inside the Head component */}
-      <Head>
-        <title>My Wardrobe</title>
-        <link rel="icon" href="/images/closet.png" type="image/png" />
-      </Head>
-
-
-      <GoogleAnalytics gaId="G-TF2BGJFVSP" />
-
-
-      {/* Header should be consistently rendered */}
-      <header className="header">
-        <h1>My Wardrobe</h1>
-        <button className="menu-button" onClick={toggleSidebar}>
-          ☰
-        </button>
-      </header>
-
-
-      {/* Sidebar navigation */}
-      <nav className={`sidebar ${sidebarOpen ? "open" : ""}`}>
-        <button className="close-button" onClick={toggleSidebar}>
-          x
-        </button>
-        <h2>Menu</h2>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/inventory">Inventory</Link>
-          </li>
-          <li>
-            <Link href="#">Outfit History</Link>
-          </li>
-          <li>
-            <Link href="#">Settings</Link>
-          </li>
-        </ul>
-      </nav>
-
-
       {/* Main content */}
       <main className="main">
-        <p className="intro-text">
+        <p
+          className="intro-text"
+          style={{ color: "yellow", textAlign: "center", marginTop: "40px" }}
+        >
           Simplify Your Style with Our Personal Wardrobe Assistant. <br />
           Discover fresh outfit combinations with ease! Our AI recommends ideal
           attire based on your current wardrobe and beyond.
         </p>
-        <ol>
+        <ol style={{ marginTop: "10px" }}>
           <li>Upload images of your clothing items.</li>
           <li>Assign categories to each piece for streamlined organization.</li>
           <li>Click Upload Image to add as many items as you wish.</li>
@@ -76,8 +34,7 @@ const Page: React.FC = () => {
           <li>Click Generate Attire and get your ideal outfit in seconds!</li>
         </ol>
 
-
-        <form id="uploadForm" className="form">
+        <form id="uploadForm" className="form" style={{ marginTop: "20px" }}>
           <input type="file" id="imageInput" accept="image/*" />
           <select id="categorySelect">
             <option value="Shirt">Shirt</option>
@@ -88,8 +45,6 @@ const Page: React.FC = () => {
           <button type="submit">Upload Image</button>
         </form>
       </main>
-
-
       {/* Footer content */}
       <footer className="footer">
         <p>© 2024 Wardrobe Assistant</p>
@@ -98,9 +53,4 @@ const Page: React.FC = () => {
   );
 };
 
-
 export default Page;
-
-
-
-
