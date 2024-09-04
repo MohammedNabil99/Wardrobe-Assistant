@@ -1,6 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
-const protectedRoutes = createRouteMatcher(["/inventory(.*)"]);
+const protectedRoutes = createRouteMatcher(["/inventory(.*)", "/upload(.*)"]);
 
 export default clerkMiddleware((auth, req) => {
   if (protectedRoutes(req)) auth().protect();
