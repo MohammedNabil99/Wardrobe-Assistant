@@ -8,22 +8,22 @@ export default function Navbar() {
 
   return (
     <nav className="flex justify-between items-center p-8 text-white h-14 fixed w-full backdrop-blur-md border-b border-gray-700 z-50">
-      <Link href="/">
+      <a href="/">
         <h1 className="text-2xl font-bold">SS</h1>
-      </Link>
+      </a>
       <div className="flex flex-row gap-4">
         {isSignedIn ? (
           <>
-            <Link href="/inventory">
+            <a href="/inventory">
               <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100 text-black font-bold hover:scale-110 duration-200">
                 Inventory
               </button>
-            </Link>
-            <Link href="/upload">
+            </a>
+            <a href="/upload">
               <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100 text-black font-bold hover:scale-110 duration-200">
                 Upload
               </button>
-            </Link>
+            </a>
             <a href="/membership-plans">
               <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100 text-black font-bold hover:scale-110 duration-200">
                 View plans
