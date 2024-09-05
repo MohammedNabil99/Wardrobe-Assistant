@@ -6,7 +6,7 @@ import Navbar from "@/components/navbar";
 import QueryProviderWrapper from "@/components/query-provider";
 
 export const metadata = {
-  title: "Style Seeker",
+  title: "Staile Seeker",
   description: `Level up your drip, aura points, and unspoken rizz by leveraging the power of AI 
     to help you reduce burnout in deciding what you want to wear and understand 
     the current fashion trends.`,
@@ -23,7 +23,8 @@ export default function RootLayout({
         afterSignOutUrl={"/"}
         appearance={{
           baseTheme: [neobrutalism],
-        }}>
+        }}
+      >
         <html lang="en">
           <body>
             <Navbar />
