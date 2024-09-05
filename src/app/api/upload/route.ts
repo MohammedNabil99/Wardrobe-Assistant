@@ -57,6 +57,7 @@ export async function POST(request: NextRequest) {
   // Get file and name info
   const file = formData.get("file") as File;
   const imageName = formData.get("name") as string;
+  const category = formData.get("category") as string;
 
   if (!file) {
     return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
@@ -84,6 +85,7 @@ export async function POST(request: NextRequest) {
       user_id: user_id, // Store as string
       name: imageName,
       image_url: imageUrl,
+      category: category,
     });
 
   if (insertError) {
