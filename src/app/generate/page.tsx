@@ -357,6 +357,8 @@ const GeneratePage = () => {
   }, [user]);
 
   const generateOutfit = async () => {
+    setLoading(true); // Set loading to true when starting the request
+
     const tops = inventory
       .filter((item) => item.category === "Tops")
       .map((item) => item.name);
@@ -369,6 +371,7 @@ const GeneratePage = () => {
 
     if (!tops.length || !bottoms.length) {
       alert("You need at least one top and one bottom in your inventory.");
+      setLoading(false); // Set loading to false when ending the request
       return;
     }
 
@@ -398,6 +401,8 @@ const GeneratePage = () => {
     } catch (error) {
       console.error("Error generating outfit:", error);
       alert("Failed to generate outfit. Check console for details.");
+    } finally {
+      setLoading(false); // Always set loading to false when the request completes
     }
   };
 

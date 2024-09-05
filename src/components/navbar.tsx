@@ -24,6 +24,11 @@ export default function Navbar() {
                 Upload
               </button>
             </a>
+            <a href="/generate">
+              <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100 text-black font-bold hover:scale-110 duration-200">
+                Generate
+              </button>
+            </a>
             <a href="/membership-plans">
               <button className="border px-2 py-1 rounded-lg bg-gradient-to-br from-indigo-200 via-red-200 to-yellow-100 text-black font-bold hover:scale-110 duration-200">
                 View plans
