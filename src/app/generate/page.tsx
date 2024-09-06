@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useUser, RedirectToSignIn } from "@clerk/nextjs"; // Import RedirectToSignIn
+import { useUser, RedirectToSignIn } from "@clerk/nextjs"; 
 import Link from "next/link";
 
 interface InventoryItem {
@@ -37,7 +37,7 @@ const GeneratePage = () => {
     }
   }, [isLoaded, isSignedIn, user]);
 
-  // Early return to redirect if the user is not signed in
+
   if (!isLoaded) {
     return <div>Loading...</div>; // Show loading state while checking authentication
   }
@@ -61,7 +61,7 @@ const GeneratePage = () => {
 
     if (!tops.length || !bottoms.length) {
       alert("You need at least one top and one bottom in your inventory.");
-      setLoading(false); // Set loading to false when ending the request
+      setLoading(false); 
       return;
     }
 
@@ -86,13 +86,13 @@ const GeneratePage = () => {
         alert(result.error);
       } else {
         setOutfit(result.outfit);
-        console.log("Generated outfit:", result.outfit); // Debugging statement
+        console.log("Generated outfit:", result.outfit); 
       }
     } catch (error) {
       console.error("Error generating outfit:", error);
       alert("Failed to generate outfit. Check console for details.");
     } finally {
-      setLoading(false); // Always set loading to false when the request completes
+      setLoading(false); 
     }
   };
 

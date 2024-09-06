@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const user_id = user.id; // Directly use user.id without UUID validation
+  const user_id = user.id; 
   const supabase = createClient();
 
   const formData = await request.formData();
